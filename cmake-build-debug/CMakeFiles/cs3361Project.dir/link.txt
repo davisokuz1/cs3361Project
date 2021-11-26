@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cs3361Project.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\cs3361Project.dir/objects.a @CMakeFiles\cs3361Project.dir\objects1.rsp
+C:\MinGW\bin\g++.exe  -static-libstdc++ -static-libgcc -g -Wl,--whole-archive CMakeFiles\cs3361Project.dir/objects.a -Wl,--no-whole-archive -o cs3361Project.exe -Wl,--out-implib,libcs3361Project.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cs3361Project.dir\linklibs.rsp

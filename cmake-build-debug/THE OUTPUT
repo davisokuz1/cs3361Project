@@ -1,0 +1,12 @@
+	 <Program> 
+ 	 	 <stmt_list>
+ 	 	 	 <stmt>
+	 	 	 	 <read>
+	 	 	 	 	 read
+	 	 	 	 </read>
+	 	 	 	 <id>
+	 	 	 	 	 a
+	 	 	 	 </id>
+ 	 	 	 </stmt>
+ 	 	 </stmt_list>
+	 </Program> 
