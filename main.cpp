@@ -23,7 +23,7 @@ int main() {
     string NOF;  // Name of file
     bool error_A = false;
 
-    ofstream file_B;
+
     ifstream file_A;
 
     /*This will prompt the user for the file must be exact path name e.g."C:\Users\okuda\Documents\testing1.txt"*/
@@ -31,7 +31,7 @@ int main() {
     cin >> NOF;
 
     file_A.open(NOF);
-    file_B.open("THE OUTPUT");// Will output in system directory just search for it
+
 
 
     if (file_A.is_open()) {
@@ -40,7 +40,7 @@ int main() {
             x++;
         }
         file_A.close();
-    } else file_B << "Error: File Can't open";
+    } else cout << "Error: File Can't open";
     {
     }
 
@@ -165,7 +165,7 @@ int main() {
                                                                                            '(' && dfa[j] != ')' &&
                     dfa[j] != ':' && dfa[j] != '=' && dfa[j] != ' ' && dfa[j] !=
                                                                        '\n' && dfa[j] != '\t' && dfa[j] != '\r') {
-                    file_B << "Theres's a token that shouldn't be there." << endl;
+                    cout << "Theres's a token that shouldn't be there." << endl;
                     error_A = true;
                     break;
                 }
@@ -173,9 +173,9 @@ int main() {
         }
 
     }
-    file_B << "\t <Program> " << endl;
-    file_B << " \t \t <stmt_list>" << endl;
-    file_B << " \t \t \t <stmt>" << endl;
+    cout << "\t <Program> " << endl;
+    cout << " \t \t <stmt_list>" << endl;
+    cout << " \t \t \t <stmt>" << endl;
 
     int j = 0;
 
@@ -186,60 +186,60 @@ int main() {
         for (j = 0; j < x; j++) {
 
             if (dfa_outcome[j] == "read") {
-                file_B << "\t \t \t \t <read>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </read>" << endl;
+                cout << "\t \t \t \t <read>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </read>" << endl;
             }
             if (dfa_outcome[j] == "Id" && dfa_outcome[j + 1] == "Assign") {
-                file_B << "\t \t \t \t <id>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </id>" << endl;
+                cout << "\t \t \t \t <id>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </id>" << endl;
                 j++;
-                file_B << "\t \t \t \t <Assign>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </Assign>" << endl;
+                cout << "\t \t \t \t <Assign>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </Assign>" << endl;
             }
             if (dfa_outcome[j] == "write") {
-                file_B << "\t \t \t \t <read>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </read>" << endl;
+                cout << "\t \t \t \t <read>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </read>" << endl;
 
             }
             if (dfa_outcome[j] == "Lparen") {
-                file_B << "\t \t \t \t <Lparen>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </Lparen>" << endl;
+                cout << "\t \t \t \t <Lparen>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </Lparen>" << endl;
             }
             if (dfa_outcome[j] == "Rparen") {
-                file_B << "\t \t \t \t <rparen>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </rparen>" << endl;
+                cout << "\t \t \t \t <rparen>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </rparen>" << endl;
             }
             if (dfa_outcome[j] == "Id" && dfa_outcome[j + 1] != "Assign") {
-                file_B << "\t \t \t \t <id>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </id>" << endl;
+                cout << "\t \t \t \t <id>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </id>" << endl;
             }
             if (dfa_outcome[j] == "addition_op") {
-                file_B << "\t \t \t \t <addition_op>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </addition_op>" << endl;
+                cout << "\t \t \t \t <addition_op>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </addition_op>" << endl;
             }
             if (dfa_outcome[j] == "number") {
-                file_B << "\t \t \t \t <Number>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;;
-                file_B << "\t \t \t \t </Number>" << endl;
+                cout << "\t \t \t \t <Number>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;;
+                cout << "\t \t \t \t </Number>" << endl;
             }
             if (dfa_outcome[j] == "mult_op") {
-                file_B << "\t \t \t \t <addition_op>" << endl;
-                file_B << "\t \t \t \t \t " << hold[j] << endl;
-                file_B << "\t \t \t \t </addition_op>" << endl;
+                cout << "\t \t \t \t <addition_op>" << endl;
+                cout << "\t \t \t \t \t " << hold[j] << endl;
+                cout << "\t \t \t \t </addition_op>" << endl;
             }
         }
     }
-    file_B << " \t \t \t </stmt>" << endl;
-    file_B << " \t \t </stmt_list>" << endl;
-    file_B << "\t </Program> " << endl;
+    cout << " \t \t \t </stmt>" << endl;
+    cout << " \t \t </stmt_list>" << endl;
+    cout << "\t </Program> " << endl;
     return 0;
 }
 
