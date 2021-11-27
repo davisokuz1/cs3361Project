@@ -44,7 +44,7 @@ int main() {
     {
     }
 
-
+    //Scan algorithim
     for (int j = 0; j < x; j++)  //Create the Loop for DFA
     {
         if (dfa[j] == ' ' || dfa[j] == '\t' || dfa[j] == '\n') {
@@ -101,7 +101,7 @@ int main() {
 
         //Reassures decimal numbers e.g 5.5, 5.6
         if (isdigit(dfa[j]) || dfa[j] == '.') {
-            dfa_outcome[y] = "number";
+            dfa_outcome[y] = " not a valid number";
             Current_State = 14;
             stringstream ss;
             hold[A] = dfa[j];
@@ -157,7 +157,7 @@ int main() {
             }
 
 
-            //Look to see if other tokens are inside the file besides the one losted.
+            //Look to see if other tokens are inside the file besides the one lost.
             //If there is one then return an error.
             if (j < x) {
                 if (dfa[j] != '.' && !isdigit(dfa[j]) && !isalpha(dfa[j])
